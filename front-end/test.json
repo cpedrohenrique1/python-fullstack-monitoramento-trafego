@@ -1,10 +1,12 @@
 [
     {
         "ip": "192.168.0.1",
-        "nome": "Server padrão"
+        "nome": "Server padrão",
+        "taxa-trafego": 13.8
     },
     {
         "ip":"192.168.0.2",
-        "nome":"Server secundario"
+        "nome":"Server secundario",
+        "taxa-trafego": 14.9
     }
 ]

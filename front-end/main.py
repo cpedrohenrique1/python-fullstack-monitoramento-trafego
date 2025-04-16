@@ -1,12 +1,15 @@
 import streamlit as st
 import pandas as pd
+import requests
 
 st.write("Monitoramento do trafego de rede")
-ip = st.text_input("Registro de dispositivo")
+ip = st.text_input("Endereco IP do dispositivo")
 nome = st.text_input("Nome")
+taxa_trafego = st.number_input("Taxa de trafego")
 button = st.button("Registrar")
+url = "./test.json"
+response = pd.read_json(url)
 
-if (button):
+if not response.empty:
     st.write("Dispositivos registrados")
-    df = pd.read_json("/app/front-end/test.json")
-    st.line_chart(df)
+    st.bar_chart(response)
