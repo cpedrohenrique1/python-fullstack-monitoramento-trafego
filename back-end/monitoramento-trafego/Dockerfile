@@ -1,7 +1,7 @@
-FROM maven:3.9.9-amazoncorretto-17-alpine AS builder
+FROM amazoncorretto:17-alpine AS builder
 WORKDIR /app
 COPY . .
-RUN mvn clean package -DskipTests
+RUN ./mvnw clean package -DskipTests
 
 FROM amazoncorretto:17-alpine
 WORKDIR /app
