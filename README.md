@@ -34,7 +34,7 @@ O projeto utiliza **Docker Compose** para orquestrar os serviços do front-end e
 1. Certifique-se de ter o **Docker** e o **Docker Compose** instalados.
 2. No diretório raiz do projeto, execute o comando:
    ```bash
-   docker-compose up
+   docker compose up
 3. Acesse os serviços:
 - Front-end: http://localhost:8501
 - Back-end: http://localhost:8080
