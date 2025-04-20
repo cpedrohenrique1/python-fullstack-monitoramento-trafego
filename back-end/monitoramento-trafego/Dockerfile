@@ -1,9 +1,10 @@
-FROM openjdk:17-jdk-slim
-
+FROM maven:3.9.9-amazoncorretto-17-alpine AS builder
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-COPY /target/monitoramento-trafego-0.0.1-SNAPSHOT.jar /app/app.jar
-
+FROM amazoncorretto:17-alpine
+WORKDIR /app
+COPY --from=builder /app/target/*.jar app.jar
 EXPOSE 8080
-
 ENTRYPOINT ["java", "-jar", "app.jar"]
