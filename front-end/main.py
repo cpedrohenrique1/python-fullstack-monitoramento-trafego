@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 import matplotlib.pyplot as plt
 
-url = "http://localhost:8080/dispositivos"
+url = "http://back-end:8080/dispositivos"
 
 def showGraph(df):
     if not df.empty:
